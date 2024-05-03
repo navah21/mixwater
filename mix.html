@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Colors</title>
+    <link rel="stylesheet" href="mix.css">
+    <script src="mix.js"></script>
+</head>
+<body>
+    <div class="three-tanks">
+        <div class="tank1">
+            <div class="water1" id="redwater"></div>
+        </div>
+        <div class="taps">
+            <img src="tap.png" alt="Red tap Button" id="redtap">
+        </div>
+        <div class="redwater-flow" id="redwater-flow"></div>
+
+        <div class="tank2">
+            <div class="water2" id="greenwater"></div>
+        </div>
+        <div class="taps">
+           <img src="tap.png" alt="Green tap Button" id="greentap">
+        </div>
+        <div class="greenwater-flow" id="greenwater-flow"></div>
+
+        <div class="tank3">
+            <div class="water3" id="bluewater"></div>
+        </div>
+        <div class="taps">
+            <img src="tap.png" alt="blue tap Button" id="bluetap">
+        </div>
+        <div class="bluewater-flow" id="bluewater-flow"></div>
+        <div class="bottom-tank" id="bottom-tank">
+            <div class="combine-water" id="combine-water"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('redtap').addEventListener('click', function () {
+                tap('red');
+            });
+            document.getElementById('greentap').addEventListener('click', function () {
+                tap('green');
+            });
+            document.getElementById('bluetap').addEventListener('click', function () {
+                tap('blue');
+            });
+        });
+    </script>
+</body>
+</html>

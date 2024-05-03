@@ -1,0 +1,187 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  zoom: 0.8;
+}
+.three-tanks{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+
+}
+.tank1,.tank2,.tank3{
+  border: 4px solid black;
+  border-top: 0;
+}
+#redtap,#greentap,#bluetap{
+  height: 25px;
+  width: 25px;
+  margin-top:175px ;
+}
+.tank1{
+  height: 30vh;
+  width: 40vh;
+  background-color: white;
+}
+.water1{
+  position: relative;
+  animation: redpour 20s linear forwards;
+  animation-play-state: paused;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  height: 10vh; 
+  width: 40vh; 
+  background-color: red; 
+}
+.redwater-flow{
+  position: absolute;
+  height: 20vh; 
+  width: 1vh; 
+  background-color: red; 
+  left: 94vh;
+  /* top: 80vh; */
+  margin-top: 64vh;
+  animation: waterflow 0.5s linear forwards;
+  animation-play-state: paused; 
+}
+
+.tank2{
+  height: 30vh;
+  width: 40vh;
+  background-color: white;
+}
+.water2{
+  position: relative;
+  animation: redpour 20s linear forwards;
+  animation-play-state: paused;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  height: 30vh; 
+  width: 40vh; 
+  background-color:green; 
+}
+.greenwater-flow{
+  position: absolute;
+  height: 20vh; 
+  width: 1vh; 
+  background-color:green; 
+  left: 144vh;
+  /* top: 80vh; */
+  margin-top: 64vh;
+  animation: waterflow 0.5s linear forwards;
+  animation-play-state: paused; 
+}
+.tank3{
+  height: 30vh;
+  width: 40vh;
+  background-color: white;
+}
+.water3{
+  position: relative;
+  animation: redpour 20s linear forwards;
+  animation-play-state: paused;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  height: 30vh; 
+  width: 40vh; 
+  background-color: blue; 
+}
+.bluewater-flow{
+  position: absolute;
+  height: 20vh; 
+  width: 1vh; 
+  background-color: blue; 
+  left: 193.7vh;
+  /* top: 80vh; */
+  margin-top: 64.2vh;
+  animation: waterflow 0.5s linear forwards;
+  animation-play-state: paused; 
+}
+.taps{
+  margin-right: 40px;
+}
+.combine-water{
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  margin-top: 250px;
+  margin-left: 570px;
+  align-items: center;
+  width: 130vh; 
+  height: 150px; 
+  background-color: white;
+  border: 3px solid black;
+  border-top: 0;
+  z-index: -1; 
+}
+.combine-water::before {
+  position: absolute;
+  content: '';
+  width: 200%;
+  height: 200%;
+  background-color: #ececec;
+  top: -150%;
+  left: -50%;
+  border-radius: 40%;
+  animation: wave 1s infinite linear;
+}
+
+
+.combine-water::after {
+  position: absolute;
+  content: '';
+  width: 204%;
+  height: 204%;
+  background-color: #ececec80;
+  top: -150%;
+  left: -52%;
+  border-radius: 40%;
+  animation: wave 1s infinite linear;
+  animation-delay: 0.1s;
+
+}
+@keyframes wave {
+  0% {
+      clip-path: polygon(0 94%, 13% 96%, 25% 94%, 38% 90%, 46% 94%, 56% 92%, 66% 96%, 78% 94%, 93% 95%, 100% 100%, 100% 0, 0 0);}
+  100% {
+      clip-path: polygon(0 90%, 8% 100%, 19% 91%, 27% 100%, 40% 90%, 51% 100%, 61% 92%, 73% 100%, 87% 93%, 100% 100%, 100% 0, 0 0);   }
+}
+@keyframes waterflow{
+
+from {height: 0;top: 0; }
+to {height:27vh; top: 0; }
+
+}
+
+@keyframes redpour {
+  from {
+      height: 100%;
+      top: 0;
+  }
+  to {
+      height: 0;
+      top: 100%;
+  }
+
+}
+
+@keyframes greenpour {
+  from {height: 100%; top: 0; }
+  to {height: 0; top: 100%; }
+}
+
+@keyframes bluepour {
+  from {height: 100%; top: 0;}
+  to {height: 0; top: 100%; }
+}
